@@ -1,6 +1,11 @@
    /* header.ejs file -----------------------------------------------------------------------------------------*/
+   body{
+       background: url("images/clean-gray-paper.png");
+       background-color: rgb(196, 161, 196);
+   }
 .navbar{
-    background-color:rgb(243, 243, 243) ;
+    background-color:rgb(188, 182, 182) ;
+    
     box-shadow: 5px 7px 8px rgb(205, 204, 207);
     padding-top: 15px;
     padding-bottom: 15px;
@@ -10,6 +15,7 @@
 }
 
      /* home.ejs file  --------------------------------------------------------------------------------------- */
+
       .button {
           background-color: rgb(157, 157, 235);
           text-decoration: none;
@@ -43,6 +49,11 @@
         display: flex;
         margin-top: 20px;
     }
+
+    .fill{
+        width: 100%;
+    }
+    
     .content-style h1{
         /* display: flex; */
         float: left;
@@ -60,6 +71,14 @@
     .post-heading h4 {
         float: right;
         color: rosybrown;  
+    }
+
+    .wrapper{
+        padding: 12px 20px;
+    border: 1px solid;
+    margin: 14px;
+    border-radius: 4px;
+    font-size: 15px;
     }
 
 

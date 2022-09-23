@@ -5,7 +5,7 @@
 
 <%- include("partials/header") -%>
 
-<h1 class="title-heading">Blog Post</h1>
+<h1 class="title-heading">QUESTIONS</h1>
 
 
         <% posts.forEach(function(post) { %>
@@ -16,6 +16,9 @@
          <p><%= post.content.substring(1,100)+"..."%> 
          <a href="/posts/<%=post.title%>" + post.title> Read more</a> 
         </p>
+    </div>
+    <div>
+    <textarea rows="8" cols="80" class="fill" placeholder="Write your answer here"></textarea>
     </div>
     <hr>
             <% }) %>

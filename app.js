@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const ejs = require("ejs");
 const _ = require('lodash');
-const port = 8080;
+const port = 3000;
 let posts = [];
 let myArray = Object.values(posts);
 
@@ -15,8 +15,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'))
 
-// mongoose.connect("mongodb://localhost:27017/Portfolio", {useNewUrlParser: true});
-mongoose.connect(process.env.MONGOOSE_CONNECTION_LINK, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb://127.0.0.1:27017/Portfolio",{useNewUrlParser: true});
 
 
 const postSchema = {
@@ -28,14 +27,18 @@ const postSchema = {
 const Post = mongoose.model("Post", postSchema);
 
 app.get("/", (req, res) => {
-    Post.find({}, function(err, posts){
+    Post.find({}, function(err,posts){
     res.render('home.ejs', {
         posts: posts
     });
 })
 });
-app.get("/compose", (req, res) => {
+app.get("/compose",(req,res) => {
     res.render('compose.ejs');
+})
+app.get("/login",(req,res) => {
+    res.render('login.ejs');
+    res.redirect("/");
 })
 
 const date = new Date();
@@ -80,24 +83,6 @@ app.get('/posts/:userId', function (req, res) {
 });
 });
 
-app.get("/about", (req, res) => {
-    res.render('about.ejs');
-})
-app.get("/contact", (req, res) => {
-    res.render('contact.ejs');
-})
-app.get("/project", (req, res) => {
-    res.render('project.ejs');
-})
-app.get("/project/readmore/ar7fitness", (req, res) => {
-    res.render('readmore/ar7fitness.ejs');
-})
-app.get("/project/readmore/portfolio", (req, res) => {
-    res.render('readmore/portfolio.ejs');
-})
-app.get("/skill", (req, res) => {
-    res.render('skill.ejs');
-})
 
 app.listen(process.env.PORT || port,()=>{
     console.log(`The application started successfully on port ${port}`);

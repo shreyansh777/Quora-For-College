@@ -1,0 +1,61 @@
+
+<%- include("partials/header") -%>
+<style>
+    
+
+    h1{
+        align-self: center;
+    }
+    
+    .formdesign{
+        font-size: 20px;
+    }
+    
+    .formdesign input{
+        
+        padding: 12px 20px;
+        border: 1px solid;
+        margin: 5px;
+        border-radius: 4px;
+        font-size: 15px;
+        width: 40%;
+    }
+    
+    #tnc{
+        margin-left: 0px;
+    }
+    
+    #welcome{
+        display: flex;
+        color: red;
+        font-family: cursive;
+        font-weight: bold;
+        justify-content: center;
+    
+    }
+    </style>
+
+<link rel="stylesheet" href="public/style.css">
+    <h1 id ="welcome">Please fill in your credentials</h1>
+    <form name="myForm" id="form">
+    <div class="formdesign" id="Ftitle">
+       <h1>Email ID</h1> <input type="text" name="Ftitle" placeholder="Email"><b><span class="formError"></span></b>
+    </div>
+    <div class="formdesign" id="Description">
+       <h1> Password</h1> <input type="password" name="pass" id = "pass" placeholder="Password"><b><span class="formError"></span></b>
+    </div>
+    <div class="formdesign" id="Cbox">
+        I agree to terms and conditions <input type="checkbox" id="tnc" name="tnc" value="tnc" class="agree"><b><span class="formError"></span></b>
+    </div>
+   
+    <button class="but" type="submit" value="submit"> SUBMIT</button>
+  
+    </form>
+    
+    
+
+    
+<script src="css/index.js"></script>
+
+
+<%- include("partials/footer") -%> 

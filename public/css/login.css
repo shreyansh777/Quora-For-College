@@ -1,0 +1,33 @@
+body{
+    padding: 10px 50px;
+}
+
+h1{
+    align-self: center;
+}
+
+.formdesign{
+    font-size: 20px;
+}
+
+.formdesign input{
+    
+    padding: 12px 20px;
+    border: 1px solid;
+    margin: 14px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+#tnc{
+    margin-left: 0px;
+}
+
+#welcome{
+    display: flex;
+    color: red;
+    font-family: cursive;
+    font-weight: bold;
+    justify-content: center;
+
+}
